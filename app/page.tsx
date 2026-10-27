@@ -19,6 +19,19 @@ const occasions = [
   ["Graduation", "Fakhr ka lamha", "#graduation"],
 ];
 
+const prices = [
+  ["Birthday figurine", "7,499"],
+  ["Graduation figurine", "7,999"],
+  ["Professional desk gift", "8,999"],
+  ["Newborn keepsake", "7,299"],
+  ["Maternity figurine", "7,999"],
+  ["Wedding couple", "10,999"],
+  ["Honeymoon / anniversary", "10,499"],
+  ["Memorial figurine", "7,999"],
+  ["Family of 3", "14,499"],
+  ["Family of 4", "17,499"],
+];
+
 const faqs = [
   {
     question: "How do I create my Nishaani?",
@@ -43,7 +56,7 @@ const faqs = [
   {
     question: "How much does a Nishaani cost?",
     answer:
-      "The price depends on the keepsake style and the details you choose. Contact us with your idea and we’ll share the options and pricing before you decide.",
+      "Our 90-day launch prices are listed in PKR in the pricing section. Shipping costs can vary by destination and model; we’ll confirm the total with you before you order.",
   },
   {
     question: "Can I create a keepsake for any occasion?",
@@ -207,6 +220,7 @@ export default function Home() {
         <nav className="main-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#occasions">Collections</a>
+          <a href="#pricing">Pricing</a>
           <a href="#transformation">Our story</a>
           <a href="#how-it-works">How it works</a>
           <a href="#packaging">Gift experience</a>
@@ -333,6 +347,32 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="pricing-section section-pad" id="pricing">
+          <div className="section-heading">
+            <span className="eyebrow">A LITTLE FOREVER, WITH CLEAR PRICING</span>
+            <h2>
+              Made for your moment.
+              <br />
+              <em>Priced with care.</em>
+            </h2>
+            <p>90-day launch prices · Pakistani rupees (PKR)</p>
+          </div>
+          <div className="price-list">
+            {prices.map(([name, amount]) => (
+              <article className="price-item" key={name}>
+                <h3>{name}</h3>
+                <p><span>Rs.</span> {amount}</p>
+              </article>
+            ))}
+          </div>
+          <p className="pricing-note">
+            Shipping may vary for bulky models and some destinations. We’ll confirm your total before production.
+          </p>
+          <a className="button button-dark pricing-cta" href="mailto:hello@nishaani.com?subject=Keepsake%20order%20enquiry">
+            Ask about your keepsake <span aria-hidden="true">↗</span>
+          </a>
         </section>
 
         <section className="stories-section section-pad" id="stories">

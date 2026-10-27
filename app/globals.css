@@ -483,6 +483,78 @@ a.occasion-card:focus-visible {
   font-size: 13px;
 }
 
+.pricing-section {
+  padding-top: 96px;
+  padding-bottom: 100px;
+  background: #eee9dc;
+}
+
+.pricing-section .section-heading > p {
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.price-list {
+  width: min(100%, 980px);
+  margin: 44px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.price-item {
+  min-width: 0;
+  min-height: 78px;
+  padding: 17px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-item:nth-child(even) {
+  border-left: 1px solid var(--line);
+}
+
+.price-item h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.price-item p {
+  margin: 0;
+  flex: 0 0 auto;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.price-item p span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 10px;
+}
+
+.pricing-note {
+  max-width: 700px;
+  margin: 23px auto 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.pricing-cta {
+  margin: 27px auto 0;
+  display: flex;
+  width: fit-content;
+}
+
 .stories-section {
   padding-top: 88px;
   padding-bottom: 94px;
@@ -1378,6 +1450,7 @@ a.occasion-card:focus-visible {
   }
 
   .occasion-section,
+  .pricing-section,
   .stories-section,
   .steps-section {
     padding-top: 74px;
@@ -1412,6 +1485,28 @@ a.occasion-card:focus-visible {
   .occasion-arrow {
     right: 14px;
     bottom: 20px;
+  }
+
+  .price-list {
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .price-item {
+    min-height: 70px;
+    padding: 15px 4px;
+  }
+
+  .price-item:nth-child(even) {
+    border-left: 0;
+  }
+
+  .price-item h3 {
+    font-size: 12px;
+  }
+
+  .price-item p {
+    font-size: 19px;
   }
 
   .occasion-more {
