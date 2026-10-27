@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CareGallery from "./CareGallery";
+import SiteHeader from "./SiteHeader";
 
 type StoryCardProps = {
   number: string;
@@ -212,33 +213,7 @@ function StoryCard({
 export default function Home() {
   return (
     <>
-      <header className="site-header">
-        <a className="brand" href="#home" aria-label="Nishaani home">
-          <span className="brand-name">nishaani</span>
-          <span className="brand-caption">YOUR MEMORIES, MADE PERSONAL</span>
-        </a>
-        <nav className="main-nav" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#occasions">Collections</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#transformation">Our story</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#packaging">Gift experience</a>
-          <a href="#faq">FAQs</a>
-        </nav>
-        <div className="header-actions">
-          <a className="button button-outline header-cta" href="#create">
-            Create your Nishaani <span aria-hidden="true">↗</span>
-          </a>
-          <a className="bag-link" href="#create" aria-label="View saved keepsake">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 8.5h14l1 12H4l1-12Z" />
-              <path d="M9 9V6a3 3 0 0 1 6 0v3" />
-            </svg>
-            <span>0</span>
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main>
         <section className="hero" id="home" aria-label="Personalized 3D keepsakes">
