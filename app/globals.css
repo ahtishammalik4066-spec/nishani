@@ -54,14 +54,16 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  min-height: 110px;
-  padding: 22px 5.5%;
+  min-height: 92px;
+  padding: 16px 5.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  border-bottom: 1px solid rgb(217 199 170 / 65%);
-  background: var(--paper);
+  border-bottom: 1px solid rgb(217 199 170 / 75%);
+  background: rgb(251 245 235 / 96%);
+  box-shadow: 0 8px 24px rgb(23 56 46 / 5%);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -95,7 +97,7 @@ a {
 
 .main-nav {
   justify-content: center;
-  gap: clamp(14px, 1.8vw, 25px);
+  gap: clamp(12px, 1.45vw, 21px);
   margin-left: auto;
 }
 
@@ -107,13 +109,33 @@ a {
 }
 
 .main-nav a {
+  position: relative;
+  padding: 8px 0;
+  color: var(--ink-soft);
   transition: color 180ms ease;
+}
+
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
 }
 
 .main-nav a:hover,
 .text-link:hover,
 .occasion-more a:hover {
   color: var(--gold);
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -202,24 +224,34 @@ a {
 
 .hero {
   position: relative;
-  height: min(56.5vw, 650px);
-  min-height: 420px;
   overflow: hidden;
   background: #67402e;
 }
 
+.hero-visual {
+  position: relative;
+  aspect-ratio: 2000 / 667;
+  overflow: hidden;
+  background: #3b241d;
+}
+
+.hero-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
 .hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
 }
 
 .hero-bottom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  min-height: 103px;
-  padding: 18px 6%;
+  min-height: 88px;
+  padding: 16px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1357,19 +1389,17 @@ a.occasion-card:focus-visible {
     transform: scale(0.9);
   }
 
-  .hero {
-    height: 68vw;
-    min-height: 315px;
-    max-height: 510px;
+  .hero-visual {
+    aspect-ratio: 1 / 2;
   }
 
   .hero-image {
-    object-position: center;
+    object-fit: contain;
   }
 
   .hero-bottom {
-    min-height: 112px;
-    padding: 14px 5%;
+    min-height: 108px;
+    padding: 17px 6%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1750,27 +1780,29 @@ a.occasion-card:focus-visible {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   html {
-    scroll-padding-top: 86px;
+    scroll-padding-top: 88px;
   }
 
   .site-header {
-    min-height: 79px;
-    padding: 16px 5%;
+    min-height: 82px;
+    padding: 14px 5%;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
   }
 
   .main-nav {
     order: 4;
     width: 100%;
-    margin: 4px 0 0;
-    padding-top: 8px;
+    margin: 2px 0 0;
+    padding: 10px 16px 4px;
     display: none;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 12px;
-    border-top: 1px solid var(--line);
+    gap: 0 24px;
+    border: 1px solid var(--line);
+    background: var(--paper-light);
+    box-shadow: 0 14px 30px rgb(23 56 46 / 8%);
   }
 
   .site-header[data-menu-open="true"] .main-nav {
@@ -1778,10 +1810,14 @@ a.occasion-card:focus-visible {
   }
 
   .main-nav a {
-    min-height: 42px;
-    padding: 12px 4px;
+    min-height: 46px;
+    padding: 13px 4px;
     border-bottom: 1px solid rgb(217 199 170 / 55%);
     font-size: 12px;
+  }
+
+  .main-nav a::after {
+    display: none;
   }
 
   .header-actions {
@@ -1790,8 +1826,8 @@ a.occasion-card:focus-visible {
   }
 
   .menu-toggle {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -1799,10 +1835,18 @@ a.occasion-card:focus-visible {
     justify-content: center;
     gap: 5px;
     border: 1px solid var(--line);
-    border-radius: 2px;
-    background: transparent;
+    border-radius: 50%;
+    background: var(--paper-light);
     color: var(--ink);
     cursor: pointer;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .menu-toggle:hover {
+    border-color: var(--gold);
+    background: #fffaf2;
   }
 
   .menu-toggle span {

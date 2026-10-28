@@ -217,14 +217,20 @@ export default function Home() {
 
       <main>
         <section className="hero" id="home" aria-label="Personalized 3D keepsakes">
-          <Image
-            className="hero-image"
-            src="/images/hero-reference.jpg"
-            alt="A wedding photograph on a phone transformed into a personalized couple 3D keepsake"
-            fill
-            priority
-            sizes="100vw"
-          />
+          <div className="hero-visual">
+            <picture className="hero-picture">
+              <source
+                media="(max-width: 760px)"
+                srcSet="/images/hero-romantic-memories-mobile.png"
+              />
+              <img
+                className="hero-image"
+                src="/images/hero-romantic-memories.png"
+                alt="A couple at a candlelit wedding, with their photograph displayed on a phone among flowers"
+                fetchPriority="high"
+              />
+            </picture>
+          </div>
           <div className="hero-bottom">
             <span className="hero-note">
               PERSONALIZED 3D KEEPSAKES <i>·</i> MADE FROM YOUR PHOTOS
