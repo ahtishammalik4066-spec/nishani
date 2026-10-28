@@ -146,6 +146,10 @@ a {
   display: none;
 }
 
+.mobile-nav-cta {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
 }
@@ -1365,8 +1369,8 @@ a.occasion-card:focus-visible {
   }
 
   .brand-name {
-    font-size: 39px;
-    letter-spacing: -2.7px;
+    font-size: 35px;
+    letter-spacing: -2.4px;
   }
 
   .brand-caption {
@@ -1698,6 +1702,8 @@ a.occasion-card:focus-visible {
 
   .site-footer {
     padding: 50px 6% 22px;
+    background-size: auto, 150% auto, auto;
+    background-position: center, center 58%, center;
   }
 
   .footer-main {
@@ -1762,7 +1768,7 @@ a.occasion-card:focus-visible {
   }
 
   .brand-name {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .hero {
@@ -1820,9 +1826,33 @@ a.occasion-card:focus-visible {
     display: none;
   }
 
+  .main-nav .mobile-nav-cta {
+    min-height: 48px;
+    margin: 12px 0 6px;
+    padding: 0 16px;
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper-light);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  .main-nav .mobile-nav-cta:hover {
+    background: var(--ink-soft);
+    color: var(--paper-light);
+  }
+
   .header-actions {
     margin-left: auto;
     gap: 12px;
+  }
+
+  .header-actions .header-cta {
+    display: none;
   }
 
   .menu-toggle {
@@ -1877,20 +1907,6 @@ a.occasion-card:focus-visible {
 }
 
 @media (max-width: 420px) {
-  .header-cta {
-    min-height: 40px;
-    padding: 0 9px;
-    font-size: 10px;
-  }
-
-  .header-cta-full {
-    display: none;
-  }
-
-  .header-cta-short {
-    display: inline;
-  }
-
   .header-actions {
     gap: 8px;
   }

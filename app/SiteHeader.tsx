@@ -27,6 +27,13 @@ export default function SiteHeader() {
             {label}
           </a>
         ))}
+        <a
+          className="button button-outline mobile-nav-cta"
+          href="#create"
+          onClick={() => setMenuOpen(false)}
+        >
+          Create your Nishaani <span aria-hidden="true">↗</span>
+        </a>
       </nav>
       <div className="header-actions">
         <a
